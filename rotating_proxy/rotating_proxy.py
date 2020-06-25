@@ -61,7 +61,8 @@ class RotatingProxy:
         table_content = table.find('tbody')
         for row in table_content.findAll('tr'):
             cols = row.findAll('td')
-            ip, port, _, country, _, _, https, _ = [c.contents[0] for c in cols]
+            print(len(cols))
+            ip, port, _, country, _, _, https, _ = [c.contents[0] if len(c.contents) > 0 else "" for c in cols]
             is_https = https == "yes"
             if self.https != is_https:
                 continue
