@@ -1,6 +1,17 @@
 # rotating-proxy
 A python module to automatically fetch rotating proxy ips.
 
+# Sources
+- https://free-proxy-list.net/
+
+# Note
+I would suggest to refresh the proxy list say around every 30min
+
+```
+rp_http = RotatingProxy(https = False)
+rp_https.update()
+```
+
 # Install
 ```
 pip install git+https://github.com/stamas02/rotating-proxy.git
